@@ -1,59 +1,139 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"> <a href="#" target="_blank"> <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="ApplyFlow Logo"> </a> </p> <p align="center"> <a href="#"><img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status"></a> <a href="#"><img src="https://img.shields.io/github/stars/seu-usuario/applyflow" alt="Stars"></a> <a href="#"><img src="https://img.shields.io/github/license/seu-usuario/applyflow" alt="License"></a> <a href="#"><img src="https://img.shields.io/badge/Laravel-10-red" alt="Laravel Version"></a> </p>
+About ApplyFlow
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+ApplyFlow is a modern web platform built with Laravel that simplifies the job search and application process.
 
-## About Laravel
+The system centralizes everything a candidate needs:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Job discovery
+Application tracking
+Profile management
+Resume generation
+AI-powered job matching
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ApplyFlow focuses on productivity, automation, and a clean user experience.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Core Features
 
-## Learning Laravel
+ApplyFlow provides essential tools for job seekers:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Smart job dashboard with filters and ranking
+Application tracking system (applied, interview, hired, etc.)
+Professional profile management
+Automatic resume generation (print-ready PDF)
+AI integration for:
+Resume analysis
+Job compatibility scoring
+Strategic summaries
+Architecture Overview
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+The project follows a clean Laravel structure:
 
-## Laravel Sponsors
+Controllers: Handle business logic (Auth, Dashboard, Profile, Jobs)
+Models: Represent database entities (User, Job)
+Services: AI integration, matching logic, scraping
+Views (Blade): UI rendering
+API Layer: JWT-based authentication
+Technologies
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+ApplyFlow is built using modern technologies:
 
-### Premium Partners
+Laravel 10
+PHP 8.1+
+Blade Templates
+Tailwind CSS
+SQLite / MySQL
+JWT Authentication (tymon/jwt-auth)
+Python (AI processing)
+Installation
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Follow these steps to run the project locally:
 
-## Contributing
+git clone https://github.com/seu-usuario/applyflow.git
+cd applyflow
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+composer install
+cp .env.example .env
+php artisan key:generate
 
-## Code of Conduct
+# Database
+touch database/database.sqlite
+php artisan migrate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Frontend
+npm install
+npm run dev
 
-## Security Vulnerabilities
+# Run server
+php artisan serve
+Configuration
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Update your .env file:
 
-## License
+DB_CONNECTION=sqlite
+MAIL_MAILER=log
+API Authentication (JWT)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ApplyFlow also provides an API layer:
+
+POST /api/login
+POST /api/register
+GET /api/user (requires token)
+POST /api/logout
+
+Use:
+
+Authorization: Bearer {token}
+AI Integration
+
+ApplyFlow includes a Python-based AI module:
+
+bot/ai_resume_bot.py
+
+This module is responsible for:
+
+Analyzing job descriptions
+Comparing with user profile
+Generating strategic resume summaries
+Resume System
+
+Users can generate a professional resume at:
+
+/meu-curriculo
+
+Features:
+
+Clean layout
+Printable (A4 format)
+PDF export
+Auto-filled from profile
+Roadmap
+
+Planned improvements:
+
+LinkedIn data auto-import
+Resume upload (PDF parsing)
+Admin dashboard
+Notifications system
+Advanced filters
+Smarter AI matching
+Contributing
+
+Thank you for considering contributing to ApplyFlow!
+
+You can help by:
+
+Reporting bugs
+Suggesting features
+Submitting pull requests
+Code of Conduct
+
+Please be respectful and constructive when contributing to this project.
+
+Security Vulnerabilities
+
+If you discover a security issue, please report it privately instead of opening a public issue.
+
+License
+
+ApplyFlow is open-sourced software licensed under the MIT license
