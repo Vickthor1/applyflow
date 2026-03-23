@@ -1,0 +1,186 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* =========================================
+   RESET
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   BASE GLOBAL (NÃO QUEBRA LAYOUT)
+========================================= */
+body {
+    background-color: #f3f4f6;
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 #f8f9fa;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f8f9fa;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #8b5cf6;
+    border-radius: 8px;
+    border: 3px solid #f8f9fa;
+}
+
+/* =========================================
+   TIPOGRAFIA GLOBAL
+========================================= */
+h1 { font-size: 2rem; font-weight: bold; }
+h2 { font-size: 1.5rem; font-weight: bold; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+h4 { font-size: 1rem; font-weight: 600; }
+
+p { margin-bottom: 1rem; }
+
+/* =========================================
+   CONTAINER PADRÃO
+========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+button,
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary { background: #007bff; color: white; }
+.btn-primary:hover { background: #0056b3; }
+
+.btn-success { background: #28a745; color: white; }
+.btn-success:hover { background: #218838; }
+
+.btn-warning { background: #ffc107; color: black; }
+.btn-warning:hover { background: #e0a800; }
+
+/* =========================================
+   FORMULÁRIOS
+========================================= */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* =========================================
+   CARDS PADRÃO
+========================================= */
+.card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* =========================================
+   GRID (SEU FAVORITO 👇)
+========================================= */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* =========================================
+   JOB CARD
+========================================= */
+.job-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   PROFILE (ESCOPADO - NÃO QUEBRA DASHBOARD)
+========================================= */
+.profile-page {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container {
+    max-width: 650px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+/* =========================================
+   RESUME (ESCOPADO)
+========================================= */
+.resume-page {
+    background: #f3f4f6;
+}
+
+.a4-paper {
+    background: white;
+    width: 210mm;
+    margin: 20px auto;
+    padding: 60px;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+@media (max-width: 768px) {
+    .grid-auto {
+        grid-template-columns: 1fr;
+    }
+}
